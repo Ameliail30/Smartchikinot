@@ -1,6 +1,9 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login',[AuthController::class, 'index'])->name('login');
+
+Route::post('/auth/login',[AuthController::class, 'login']);
+Route::post('/auth/logout',[AuthController::class, 'logout']);
+
+Route::middleware('auth')->group(function(){
+    Route::get('/', function () {
+         return view('content.dashboard.index');
+    })->name('dashboard');
+    // Route::resource('config.lamp',ConfigLampController::class);
+    // Route::resource('config.heater',ConfigHeaterController::class);
+    Route::middleware('role:admin')->prefix('manage')->group(function(){
+    Route::resource('devices',DeviceController::class);
+    Route::resource('users',UserController::class);
+});
+
 });
