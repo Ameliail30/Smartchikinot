@@ -30,8 +30,7 @@ Route::middleware('auth')->group(function(){
     Route::post('config/heater/update',[ConfigHeaterController::class,'update'])->name('heater.update');
     Route::get('config/lamp',[ConfigLampController::class,'index']);
     Route::post('config/lamp/update',[ConfigLampController::class,'update'])->name('lamp.update');
-    Route::middleware('role:admin')->prefix('manage')->group(function(){
-        
+    Route::middleware('role:admin')->prefix('manage')->group(function(){ 
     Route::resource('devices',DeviceController::class);
     Route::resource('users',UserController::class);
 });
