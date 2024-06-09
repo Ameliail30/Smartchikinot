@@ -26,8 +26,12 @@ Route::middleware('auth')->group(function(){
          return view('content.dashboard.index');
     })->name('dashboard');
     // Route::resource('config.lamp',ConfigLampController::class);
-    // Route::resource('config.heater',ConfigHeaterController::class);
+    Route::get('config/heater',[ConfigHeaterController::class,'index']);
+    Route::post('config/heater/update',[ConfigHeaterController::class,'update'])->name('heater.update');
+    Route::get('config/lamp',[ConfigLampController::class,'index']);
+    Route::post('config/lamp/update',[ConfigLampController::class,'update'])->name('lamp.update');
     Route::middleware('role:admin')->prefix('manage')->group(function(){
+        
     Route::resource('devices',DeviceController::class);
     Route::resource('users',UserController::class);
 });

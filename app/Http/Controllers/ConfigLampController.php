@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LampController extends Controller
+class ConfigLampController extends Controller
 {   
     public function index(Request $request)
     {
@@ -15,7 +15,7 @@ class LampController extends Controller
             'off_time' => '23:00', // contoh waktu mati
             'on_time' => '05:00' // contoh waktu nyala
         ];
-        return view('pages.controls.lampu', compact('devices'));
+        return view('content/config/lamp/index', compact('lampSettings'));
     }
 
     public function update(Request $request)
@@ -37,6 +37,6 @@ class LampController extends Controller
         // Contoh penyimpanan ke database
         // LampSetting::updateOrCreate(['device_id' => $device_id], ['status' => $status, 'off_time' => $off_time, 'on_time' => $on_time]);
 
-        return redirect()->route('lamp.index')->with('success', 'Pengaturan lampu diperbarui.');
+        return redirect('/config/lamp')->with('success', 'Pengaturan lampu diperbarui.');
     }
 }

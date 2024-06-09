@@ -11,7 +11,7 @@
             <h6>Manage devices</h6>
         </div>
         <div class="card-title">
-<a href="{{url('/devices/create')}}" class="btn btn-primary">tambah device</a>
+<a href="{{url('manage/devices/create')}}" class="btn btn-primary">tambah device</a>
         </div>
         <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-0">
@@ -38,11 +38,11 @@
                             </td>
                             <td class="">
                                 <div class="d-flex">
-                                    <a href="{{ url('/devices/'.$item->id.'/edit') }}" class="btn btn-secondary font-weight-bold text-xs me-2"
+                                    <a href="{{ url('manage/devices/'.$item->id.'/edit') }}" class="btn btn-secondary font-weight-bold text-xs me-2"
                                         data-toggle="tooltip" data-original-title="Edit user">
                                         Edit
                                     </a>
-                                    <form action="{{ url('/devices/'.$item->id) }}" method="post" >
+                                    <form action="{{ url('manage/devices/'.$item->id) }}" method="post" >
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn btn-warning font-weight-bold text-xs">

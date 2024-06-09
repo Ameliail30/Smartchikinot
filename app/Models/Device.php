@@ -9,6 +9,13 @@ class Device extends Model
 {
     use HasFactory;
     /**
+     * The data type of the primary key ID.
+     *
+     * @var string
+     */
+    protected $keyType = 'string';
+   
+    /**
      * Indicates if the model should be timestamped
      * 
      * @var bool

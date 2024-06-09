@@ -28,11 +28,11 @@
                 @csrf
                 @method('PUT')
                 <div>
-                    <label for="id">id:</label><br>
+                    <label for="id">Device id:</label><br>
                     <input type="text" id="id" name="id" value="{{ $device->id }}" required><br>
                 </div>
                 <div>
-                    <label for="user_id">id:</label><br>
+                    <label for="user_id">User id:</label><br>
                     <input type="user_id" id="user_id" name="user_id" value="{{ $device->user_id }}" required><br>
                 </div>
                 <div>

@@ -11,7 +11,7 @@
             <h6>User Data</h6>
         </div>
         <div class="card-title">
-<a href="{{url('/users/create')}}" class="btn btn-primary">tambah user</a>
+<a href="{{url('manage/users/create')}}" class="btn btn-primary">tambah user</a>
         </div>
         <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-0">
@@ -38,11 +38,11 @@
                             </td>
                             <td class="">
                                 <div class="d-flex">
-                                    <a href="{{ url('/users/'.$item->id.'/edit') }}" class="btn btn-secondary font-weight-bold text-xs me-2"
+                                    <a href="{{ url('manage/users/'.$item->id.'/edit') }}" class="btn btn-secondary font-weight-bold text-xs me-2"
                                         data-toggle="tooltip" data-original-title="Edit user">
                                         Edit
                                     </a>
-                                    <form action="{{ url('/users/'.$item->id) }}" method="post" >
+                                    <form action="{{ url('manage/users/'.$item->id) }}" method="post" >
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn btn-warning font-weight-bold text-xs">

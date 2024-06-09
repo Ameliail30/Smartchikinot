@@ -41,7 +41,7 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
  
-        return redirect('/users');
+        return redirect('manage/users');
     }
 
     /**
@@ -85,6 +85,6 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect("/users")->with('success', 'user deleted successfully');
+        return redirect("manage/users")->with('success', 'user deleted successfully');
     }
 }

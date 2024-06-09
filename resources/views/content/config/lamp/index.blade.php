@@ -5,8 +5,13 @@
 @section('page', 'Config Lamp')
 
 @section('content')
+<div class="card mb-4">
+        <div class="card-header pb-0">
+            <h6>Pengaturan Lampu</h6>
+        </div>
+        <div class="card-title">
 <div class="container">
-    <h1>Pengaturan Lampu</h1>
+<div class="card mb-4">
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif

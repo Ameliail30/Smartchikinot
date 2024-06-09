@@ -17,7 +17,7 @@ class ConfigHeaterController extends Controller
             'temperature_threshold' => 25 // contoh suhu threshold
         ];
 
-        return view('content.config.heater.index');
+        return view('content.config.heater.index',compact('heaterSettings'));
     }
 
     /**
@@ -35,7 +35,7 @@ class ConfigHeaterController extends Controller
         $mode = $request->input('mode');
         $temperature_threshold = $request->input('temperature_threshold');
 
-        return redirect()->route('heater.index')->with('success', 'Pengaturan pemanas diperbarui.');
+        return redirect()->route('config/heater')->with('success', 'Pengaturan pemanas diperbarui.');
     }
 
 }

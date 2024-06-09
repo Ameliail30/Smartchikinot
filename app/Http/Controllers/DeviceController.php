@@ -30,18 +30,17 @@ class DeviceController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'user_id' => 'required|string|max:255',
-            'name' => 'required|string|name|max:255|unique:devices,name',
-            // validasi lainnya sesuai kebutuhan
+        $validated = $request->validate([
+            "id" => ['required', 'max:6'],
+            "user_id" => ['required'],
+            "name" => ['required'],
         ]);
-        $device= new Device;
-        $device->user_id= $request->user_id;
-        $device->name = $request->name;
-        $device->password = Hash::make($request->password);
+        $device = new Device;
+        $device->id = $request->id;
+        $device->user_id = $request->user_id;
+        $device->name = $request->name;   
         $device->save();
- 
-        return redirect('/devices');
+        return redirect("manage/devices")->with('success', 'Device updated successfully');
     }
 
     /**
@@ -66,17 +65,24 @@ class DeviceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'user_id' => 'required|string|max:255',
-            'name' => 'required|string|name|max:255|unique:devices,name,'.$id,
-            // validasi lainnya sesuai kebutuhan
-        ]);
-        $device = Device::findOrFail($id);
-        $device->update($request->all());
+        try{
+            $validated = $request->validate([
+                "id" => ['required', 'max:6'],
+                "user_id" => ['required'],
+                "name" => ['required'],
+            ]);
+            
+            $device = Device::find($id);
+            $device->id = $request->id ?? $device->id;
+            $device->user_id = $request->user_id ?? $device->user_id;
+            $device->name = $request->name ?? $device->name;   
+            $device->save();
 
-        return redirect("/devices")->with('success', 'Device updated successfully');
+            return redirect()->route('devices.index');
+        } catch (\Illuminate\Database\QueryException $e){
+            return redirect()->route('devices.edit',$id);
+        }
     }
-
     /**
      * Remove the specified resource from storage.
      */
@@ -84,6 +90,6 @@ class DeviceController extends Controller
     {
         $device = Device::findOrFail($id);
         $device->delete();
-        return redirect("/devices")->with('success','device deleted successfully');
+        return redirect("manage/devices")->with('success','device deleted successfully');
     }
     }
