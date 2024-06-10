@@ -23,7 +23,7 @@
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Configuration menu</h6>
       </li>
       <li class="nav-item">
-        <a class="nav-link @if(url()->current() == url('/heater')) active @endif" href="{{ url('/heater') }}">
+        <a class="nav-link @if(url()->current() == url('/config/heater')) active @endif" href="{{ url('/config/heater') }}">
           <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
           </div>
@@ -31,7 +31,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link @if(url()->current() == url('/lamp')) active @endif" href="{{ url('/lamp') }}">
+        <a class="nav-link @if(url()->current() == url('/config/lamp')) active @endif" href="{{ url('/config/lamp') }}">
           <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
           </div>

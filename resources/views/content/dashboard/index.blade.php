@@ -13,9 +13,7 @@
           <div class="col-8">
             <div class="numbers">
               <p class="text-sm mb-0 text-uppercase font-weight-bold">Temperature</p>
-              <h5 class="font-weight-bolder" style="font-size:32px">
-                24 °C
-              </h5>
+              <h5 class="font-weight-bolder" style="font-size:32px"><span id="temp-value">0</span> °C </h5>
             </div>
           </div>
           <div class="col-4 text-end">
@@ -34,9 +32,7 @@
           <div class="col-8">
             <div class="numbers">
               <p class="text-sm mb-0 text-uppercase font-weight-bold">Humidity</p>
-              <h5 class="font-weight-bolder" style="font-size:32px">
-                50 %
-              </h5>
+              <h5 class="font-weight-bolder" style="font-size:32px"><span id="humi-value">0</span> % </h5>
             </div>
           </div>
           <div class="col-4 text-end">
@@ -55,9 +51,7 @@
           <div class="col-8">
             <div class="numbers">
               <p class="text-sm mb-0 text-uppercase font-weight-bold">Light Intensity</p>
-              <h5 class="font-weight-bolder" style="font-size:32px">
-                5 lux
-              </h5>
+              <h5 class="font-weight-bolder" style="font-size:32px"><span id="light-value">0</span> lux </h5>
             </div>
           </div>
           <div class="col-4 text-end">
@@ -123,7 +117,7 @@
         <h6 class="text-capitalize">Activity Log</h6>
         <p class="text-sm mb-0">
           <i class="fa fa-arrow-up text-success"></i>
-          <span class="font-weight-bold">4% more</span> in 2021
+          <span class="font-weight-bold">per jam</span> in 2024
         </p>
       </div>
       <div class="card-body p-3">
@@ -139,135 +133,48 @@
     <div class="card ">
       <div class="card-header pb-0 p-3">
         <div class="d-flex justify-content-between">
-          <h6 class="mb-2">Sales by Country</h6>
+          <h6 class="mb-2">Heater Status</h6>
         </div>
       </div>
       <div class="table-responsive">
         <table class="table align-items-center ">
           <tbody>
-            <tr>
+          <tr>
               <td class="w-30">
                 <div class="d-flex px-2 py-1 align-items-center">
                   <div>
-                    <img src="{{ asset('img/icons/flags/US.png') }}" alt="Country flag">
+                    <img src="{{ asset('img/Amelia-Fadhil.png') }}" class="avatar avatar-sm">
                   </div>
                   <div class="ms-4">
-                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                    <h6 class="text-sm mb-0">United States</h6>
+                    <p class="text-xs font-weight-bold mb-0">User</p>
+                    <h6 class="text-sm mb-0">1</h6>
                   </div>
                 </div>
               </td>
               <td>
                 <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                  <h6 class="text-sm mb-0">2500</h6>
+                  <p class="text-xs font-weight-bold mb-0">Device id</p>
+                  <h6 class="text-sm mb-0">A001</h6>
                 </div>
               </td>
               <td>
                 <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Value:</p>
-                  <h6 class="text-sm mb-0">$230,900</h6>
+                  <p class="text-xs font-weight-bold mb-0">Status</p>
+                  <h6 class="text-sm mb-0">Automatic</h6>
                 </div>
               </td>
               <td class="align-middle text-sm">
                 <div class="col text-center">
-                  <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                  <h6 class="text-sm mb-0">29.9%</h6>
+                  <p class="text-xs font-weight-bold mb-0">Batas suhu</p>
+                  <h6 class="text-sm mb-0">25°C</h6>
                 </div>
               </td>
             </tr>
             <tr>
-              <td class="w-30">
-                <div class="d-flex px-2 py-1 align-items-center">
-                  <div>
-                    <img src="{{ asset('img/icons/flags/DE.png') }}" alt="Country flag">
-                  </div>
-                  <div class="ms-4">
-                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                    <h6 class="text-sm mb-0">Germany</h6>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                  <h6 class="text-sm mb-0">3.900</h6>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Value:</p>
-                  <h6 class="text-sm mb-0">$440,000</h6>
-                </div>
-              </td>
-              <td class="align-middle text-sm">
-                <div class="col text-center">
-                  <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                  <h6 class="text-sm mb-0">40.22%</h6>
-                </div>
-              </td>
             </tr>
             <tr>
-              <td class="w-30">
-                <div class="d-flex px-2 py-1 align-items-center">
-                  <div>
-                    <img src="{{ asset('img/icons/flags/GB.png') }}" alt="Country flag">
-                  </div>
-                  <div class="ms-4">
-                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                    <h6 class="text-sm mb-0">Great Britain</h6>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                  <h6 class="text-sm mb-0">1.400</h6>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Value:</p>
-                  <h6 class="text-sm mb-0">$190,700</h6>
-                </div>
-              </td>
-              <td class="align-middle text-sm">
-                <div class="col text-center">
-                  <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                  <h6 class="text-sm mb-0">23.44%</h6>
-                </div>
-              </td>
             </tr>
             <tr>
-              <td class="w-30">
-                <div class="d-flex px-2 py-1 align-items-center">
-                  <div>
-                    <img src="{{ asset('img/icons/flags/BR.png') }}" alt="Country flag">
-                  </div>
-                  <div class="ms-4">
-                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                    <h6 class="text-sm mb-0">Brasil</h6>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                  <h6 class="text-sm mb-0">562</h6>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Value:</p>
-                  <h6 class="text-sm mb-0">$143,960</h6>
-                </div>
-              </td>
-              <td class="align-middle text-sm">
-                <div class="col text-center">
-                  <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                  <h6 class="text-sm mb-0">32.14%</h6>
-                </div>
-              </td>
             </tr>
           </tbody>
         </table>
@@ -278,7 +185,7 @@
     <div class="card ">
       <div class="card-header pb-0 p-3">
         <div class="d-flex justify-content-between">
-          <h6 class="mb-2">Sales by Country</h6>
+          <h6 class="mb-2">Lamp Status</h6>
         </div>
       </div>
       <div class="table-responsive">
@@ -288,125 +195,46 @@
               <td class="w-30">
                 <div class="d-flex px-2 py-1 align-items-center">
                   <div>
-                    <img src="{{ asset('img/icons/flags/US.png') }}" alt="Country flag">
+                    <img src="{{ asset('img/Amelia-Fadhil.png') }}" class="avatar avatar-sm">
                   </div>
                   <div class="ms-4">
-                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                    <h6 class="text-sm mb-0">United States</h6>
+                    <p class="text-xs font-weight-bold mb-0">User</p>
+                    <h6 class="text-sm mb-0">1</h6>
                   </div>
                 </div>
               </td>
               <td>
                 <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                  <h6 class="text-sm mb-0">2500</h6>
+                  <p class="text-xs font-weight-bold mb-0">Device id</p>
+                  <h6 class="text-sm mb-0">A002</h6>
                 </div>
               </td>
               <td>
                 <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Value:</p>
-                  <h6 class="text-sm mb-0">$230,900</h6>
+                  <p class="text-xs font-weight-bold mb-0">Status</p>
+                  <h6 class="text-sm mb-0">On</h6>
                 </div>
               </td>
               <td class="align-middle text-sm">
                 <div class="col text-center">
-                  <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                  <h6 class="text-sm mb-0">29.9%</h6>
+                  <p class="text-xs font-weight-bold mb-0">Time Off</p>
+                  <h6 class="text-sm mb-0">23.00</h6>
+                </div>
+              </td>
+              <td class="align-middle text-sm">
+                <div class="col text-center">
+                  <p class="text-xs font-weight-bold mb-0">Time On</p>
+                  <h6 class="text-sm mb-0">01.00</h6>
                 </div>
               </td>
             </tr>
             <tr>
-              <td class="w-30">
-                <div class="d-flex px-2 py-1 align-items-center">
-                  <div>
-                    <img src="{{ asset('img/icons/flags/DE.png') }}" alt="Country flag">
-                  </div>
-                  <div class="ms-4">
-                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                    <h6 class="text-sm mb-0">Germany</h6>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                  <h6 class="text-sm mb-0">3.900</h6>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Value:</p>
-                  <h6 class="text-sm mb-0">$440,000</h6>
-                </div>
-              </td>
+            </tr>
+            <tr>
               <td class="align-middle text-sm">
-                <div class="col text-center">
-                  <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                  <h6 class="text-sm mb-0">40.22%</h6>
-                </div>
               </td>
             </tr>
             <tr>
-              <td class="w-30">
-                <div class="d-flex px-2 py-1 align-items-center">
-                  <div>
-                    <img src="{{ asset('img/icons/flags/GB.png') }}" alt="Country flag">
-                  </div>
-                  <div class="ms-4">
-                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                    <h6 class="text-sm mb-0">Great Britain</h6>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                  <h6 class="text-sm mb-0">1.400</h6>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Value:</p>
-                  <h6 class="text-sm mb-0">$190,700</h6>
-                </div>
-              </td>
-              <td class="align-middle text-sm">
-                <div class="col text-center">
-                  <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                  <h6 class="text-sm mb-0">23.44%</h6>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="w-30">
-                <div class="d-flex px-2 py-1 align-items-center">
-                  <div>
-                    <img src="{{ asset('img/icons/flags/BR.png') }}" alt="Country flag">
-                  </div>
-                  <div class="ms-4">
-                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                    <h6 class="text-sm mb-0">Brasil</h6>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                  <h6 class="text-sm mb-0">562</h6>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Value:</p>
-                  <h6 class="text-sm mb-0">$143,960</h6>
-                </div>
-              </td>
-              <td class="align-middle text-sm">
-                <div class="col text-center">
-                  <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                  <h6 class="text-sm mb-0">32.14%</h6>
-                </div>
-              </td>
             </tr>
           </tbody>
         </table>
@@ -420,6 +248,7 @@
 <script>
   $(document).ready(function() {
     let timeNow = [];
+
     function addData(msg) {
       // Add to database with Jquery AJAX over http REST API
       $.post("http://127.0.0.1:8000/api/sensor", {
@@ -463,7 +292,7 @@
     gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
     gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
     gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
-    var myChart=new Chart(ctx1, {
+    var myChart = new Chart(ctx1, {
       type: "line",
       data: {
         labels: [],
@@ -479,7 +308,7 @@
           data: [],
           maxBarThickness: 6
 
-        },{
+        }, {
           label: "Humidity",
           tension: 0.4,
           borderWidth: 0,
@@ -491,7 +320,7 @@
           data: [],
           maxBarThickness: 6
 
-        },{
+        }, {
           label: "Light Intesity",
           tension: 0.4,
           borderWidth: 0,
@@ -565,7 +394,7 @@
     const options = {
       clean: true,
       connectTimeout: 4000,
-      clientId: 'Laila',
+      clientId: 'Nur',
       username: 'Ameliail30',
       password: 'Ameliafadhil30',
       ca: `-----BEGIN CERTIFICATE-----
@@ -614,7 +443,26 @@ CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=
       })
     })
 
-    client.on('message', function(topic, message) {
+    client.on('message', async function(topic, message) {
+      if (topic == '/temperature') {
+        if (typeof message == 'object') {
+          const data = JSON.parse(message.toString());
+          console.log('Received message:', data);
+
+          // Extract data
+          const deviceKode = data.device_kode;
+          const temperature = data.temperature;
+          const humidity = data.humidity;
+          const ldr = data.ldr;
+
+          let data1 = parseFloat(temperature).toFixed(2)
+          let data2 = parseFloat(ldr).toFixed(2)
+
+          $('#temp-value').html(data1)
+          $('#humi-value').html(humidity)
+          $('#light-value').html(data2)
+          
+          client.on('message', function(topic, message) {
       if (topic == '/temperature') {
         const msg = JSON.parse(message)
         if (typeof msg == 'object') {
@@ -622,7 +470,9 @@ CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=
         }
       }
     })
+        }
+      }
+    })
   })
 </script>
 @endsection
-

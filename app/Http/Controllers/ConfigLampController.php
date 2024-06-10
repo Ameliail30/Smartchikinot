@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ConfigLamp;
 
 class ConfigLampController extends Controller
 {   
@@ -33,7 +34,7 @@ class ConfigLampController extends Controller
         $status = $request->input('status');
         $off_time = $request->input('off_time');
         $on_time = $request->input('on_time');
-
+        
         // Contoh penyimpanan ke database
         // LampSetting::updateOrCreate(['device_id' => $device_id], ['status' => $status, 'off_time' => $off_time, 'on_time' => $on_time]);
 

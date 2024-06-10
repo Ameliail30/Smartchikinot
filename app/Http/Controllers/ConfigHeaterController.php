@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ConfigHeater;
 
 class ConfigHeaterController extends Controller
 {
@@ -30,12 +31,10 @@ class ConfigHeaterController extends Controller
             'mode' => 'required|in:automatic,manual',
             'temperature_threshold' => 'required|numeric',
         ]);
+       $mode = $request->input('mode');
+       $temperature_threshold = $request->input('temperature_threshold');
 
-        // Simpan pengaturan ke database atau file konfigurasi
-        $mode = $request->input('mode');
-        $temperature_threshold = $request->input('temperature_threshold');
-
-        return redirect()->route('config/heater')->with('success', 'Pengaturan pemanas diperbarui.');
+        return redirect('config/heater')->with('success', 'Pengaturan pemanas diperbarui.');
     }
 
 }
